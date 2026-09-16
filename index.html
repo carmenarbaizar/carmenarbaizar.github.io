@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carmen Arbaizar Mazás</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1c1c1e;
+    --muted: #3f3f45;
+    --accent: #1f3a5f;      /* navy / dark slate-blue */
+    --accent-hover: #2f5688;
+    --rule: #dcdce0;
+    --icon: #1f3a5f;
+    --maxw: 1080px;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #16171a;
+      --ink: #e8e8ea;
+      --muted: #bfc0c4;
+      --accent: #8fb3e0;
+      --accent-hover: #aecbf0;
+      --rule: #2f3138;
+      --icon: #8fb3e0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16171a;
+    --ink: #e8e8ea;
+    --muted: #bfc0c4;
+    --accent: #8fb3e0;
+    --accent-hover: #aecbf0;
+    --rule: #2f3138;
+    --icon: #8fb3e0;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 40px 40px 80px; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+
+  /* ---- Masthead ---- */
+  .top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .name {
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  nav { display: flex; gap: 34px; }
+  nav a {
+    font-size: 21px;
+    color: var(--accent);
+  }
+  nav a:hover { color: var(--accent-hover); }
+
+  /* ---- Body: two columns ---- */
+  .cols {
+    display: flex;
+    gap: 56px;
+    margin-top: 44px;
+    align-items: flex-start;
+  }
+  .left { flex: 0 0 340px; }
+  .right { flex: 1 1 auto; min-width: 0; }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #eef0f3;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: #9aa0aa; font-size: 14px; letter-spacing: .05em; text-transform: uppercase;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .contacts {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .contacts a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    color: var(--accent);
+  }
+  .contacts a:hover { color: var(--accent-hover); }
+  .contacts svg { flex: 0 0 auto; width: 20px; height: 20px; fill: var(--icon); }
+
+  .bio p { margin: 0 0 20px; color: var(--muted); }
+  .bio p:first-child { margin-top: 0; }
+
+  section { margin-top: 40px; }
+  section:first-of-type { margin-top: 8px; }
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .paper { margin-bottom: 20px; }
+  .paper .title { font-size: 21px; font-weight: 500; line-height: 1.35; margin: 0 0 4px; color: var(--ink); }
+  .paper .meta { font-size: 18px; color: var(--muted); margin: 0 0 6px; }
+  .paper .links { font-size: 19px; }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 32px 22px 64px; }
+    .cols { flex-direction: column; gap: 32px; }
+    .left { flex: 0 0 auto; width: 100%; max-width: 320px; }
+    .name { font-size: 28px; }
+    nav { gap: 22px; }
+    nav a, body { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <p class="name">Carmen Arbaizar Mazás</p>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="Academic_CV_summary.pdf">CV</a>
+    </nav>
+  </div>
+
+  <div class="cols">
+    <div class="left">
+      <div class="photo"><img src="Headshot.jpg" alt="Carmen Arbaizar Mazás"></div>
+      <div class="contacts">
+        <a href="mailto:c.arbaizar@lse.ac.uk">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.4l8 5 8-5V6H4zm16 2.9-8 5-8-5V18h16V8.9z"/></svg>
+          c.arbaizar@lse.ac.uk
+        </a>
+        <a href="mailto:cmazas@ucsd.edu">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.4l8 5 8-5V6H4zm16 2.9-8 5-8-5V18h16V8.9z"/></svg>
+          cmazas@ucsd.edu
+        </a>
+        <a href="https://x.com/carmenarbaizar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          @carmenarbaizar
+        </a>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="bio">
+        <p>
+          I am a PhD Student in Economics at the London School of Economics and
+          Political Science. I am currently also visiting the University of
+          California, San Diego.
+        </p>
+      </div>
+
+      <section id="research">
+        <h2>Research</h2>
+        <div class="paper">
+          <p class="title">Can Labor Market Opportunities Explain the Rising Levels of Morbidity and Mortality in the U.S.?</p>
+          <p class="meta">Working paper</p>
+          <p class="links"><a href="Deaths_of_Despair_MDP_draft.pdf">Draft</a></p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
