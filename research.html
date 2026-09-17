@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Carmen Arbaizar Mazás</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1c1c1e;
+    --muted: #3f3f45;
+    --accent: #1f3a5f;
+    --accent-hover: #2f5688;
+    --rule: #dcdce0;
+    --maxw: 1080px;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #16171a; --ink: #e8e8ea; --muted: #bfc0c4;
+      --accent: #8fb3e0; --accent-hover: #aecbf0; --rule: #2f3138;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16171a; --ink: #e8e8ea; --muted: #bfc0c4;
+    --accent: #8fb3e0; --accent-hover: #aecbf0; --rule: #2f3138;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 21px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 40px 40px 80px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+
+  .top {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    padding-bottom: 18px; border-bottom: 1px solid var(--rule);
+  }
+  .name {
+    font-weight: 600; font-size: 34px; letter-spacing: -0.01em;
+    color: var(--ink); margin: 0;
+  }
+  .name a { color: var(--ink); }
+  .name a:hover { color: var(--accent); }
+  nav { display: flex; gap: 34px; }
+  nav a { font-size: 21px; color: var(--accent); }
+  nav a.current { color: var(--ink); font-weight: 500; }
+  nav a:hover { color: var(--accent-hover); }
+
+  main { margin-top: 48px; max-width: 760px; }
+  h1.page {
+    font-weight: 600; font-size: 26px; color: var(--ink); margin: 0 0 26px;
+  }
+  .paper { margin-bottom: 34px; }
+  .paper .title {
+    font-size: 22px; font-weight: 500; line-height: 1.35;
+    margin: 0 0 5px; color: var(--ink);
+  }
+  .paper .meta { font-size: 18px; color: var(--muted); margin: 0 0 8px; }
+  .paper .links { font-size: 19px; }
+  .paper .abstract {
+    font-size: 18px; line-height: 1.55; color: var(--muted);
+    margin: 12px 0 0; max-width: 68ch;
+  }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 32px 22px 64px; }
+    .name { font-size: 28px; }
+    nav { gap: 22px; }
+    nav a, body { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <p class="name"><a href="index.html">Carmen Arbaizar Mazás</a></p>
+    <nav>
+      <a href="research.html" class="current">Research</a>
+      <a href="Academic_CV_summary.pdf">CV</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1 class="page">Research</h1>
+
+    <div class="paper">
+      <p class="title">Can Labor Market Opportunities Explain the Rising Levels of Morbidity and Mortality in the U.S.?</p>
+      <p class="meta">Working paper</p>
+      <p class="links"><a href="Deaths_of_Despair_MDP_draft.pdf">Draft</a></p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
