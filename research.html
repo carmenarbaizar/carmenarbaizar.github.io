@@ -60,13 +60,21 @@
   h1.page {
     font-weight: 600; font-size: 26px; color: var(--ink); margin: 0 0 26px;
   }
+  h3.group {
+    font-weight: 600; font-size: 19px; color: var(--muted);
+    margin: 0 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+  }
   .paper { margin-bottom: 34px; }
+  .paperrow {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px;
+  }
   .paper .title {
     font-size: 22px; font-weight: 500; line-height: 1.35;
-    margin: 0 0 5px; color: var(--ink);
+    margin: 0; color: var(--ink);
   }
   .paper .meta { font-size: 18px; color: var(--muted); margin: 0 0 8px; }
-  .paper .links { font-size: 19px; }
+  .paper .links { font-size: 19px; margin: 0; white-space: nowrap; flex: 0 0 auto; }
   .paper .abstract {
     font-size: 18px; line-height: 1.55; color: var(--muted);
     margin: 12px 0 0; max-width: 68ch;
@@ -77,6 +85,7 @@
     .name { font-size: 28px; }
     nav { gap: 22px; }
     nav a, body { font-size: 19px; }
+    .paperrow { flex-direction: column; gap: 3px; }
   }
 </style>
 </head>
@@ -94,10 +103,12 @@
   <main>
     <h1 class="page">Research</h1>
 
+    <h3 class="group">Working Papers</h3>
     <div class="paper">
-      <p class="title">Can Labor Market Opportunities Explain the Rising Levels of Morbidity and Mortality in the U.S.?</p>
-      <p class="meta">Working paper</p>
-      <p class="links"><a href="Deaths_of_Despair_MDP_draft.pdf">Draft</a></p>
+      <div class="paperrow">
+        <p class="title">Can Labor Market Opportunities Explain the Rising Levels of Morbidity and Mortality in the U.S.?</p>
+        <p class="links"><a href="Deaths_of_Despair_MDP_draft.pdf">Draft</a></p>
+      </div>
     </div>
   </main>
 
