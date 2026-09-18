@@ -1,249 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carmen Arbaizar Mazás</title>
-  <meta name="description" content="Carmen Arbaizar Mazás — PhD Candidate in Economics at the London School of Economics.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carmen Arbaizar Mazás</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1c1c1e;
+    --muted: #3f3f45;
+    --accent: #1f3a5f;      /* navy / dark slate-blue */
+    --accent-hover: #2f5688;
+    --rule: #dcdce0;
+    --icon: #1f3a5f;
+    --maxw: 1080px;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #16171a;
+      --ink: #e8e8ea;
+      --muted: #bfc0c4;
+      --accent: #8fb3e0;
+      --accent-hover: #aecbf0;
+      --rule: #2f3138;
+      --icon: #8fb3e0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16171a;
+    --ink: #e8e8ea;
+    --muted: #bfc0c4;
+    --accent: #8fb3e0;
+    --accent-hover: #aecbf0;
+    --rule: #2f3138;
+    --icon: #8fb3e0;
+  }
 
-  <!-- Fonts: loaded from Google Fonts. They work automatically once the site is hosted. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 40px 40px 80px; }
 
-  <style>
-    /* ---- Design tokens ---------------------------------------------------- */
-    :root {
-      --paper:  #fdfdfb;   /* page background        */
-      --ink:    #1b1b1a;   /* primary text           */
-      --muted:  #6d6a63;   /* secondary text         */
-      --line:   #e6e3db;   /* hairline rules         */
-      --accent: #6e2b2b;   /* links / oxblood accent */
-      --serif:  'Newsreader', Georgia, 'Times New Roman', serif;
-      --sans:   'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
-      --measure: 42rem;    /* max reading width      */
-    }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
 
-    /* ---- Base ------------------------------------------------------------- */
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 1.0625rem;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.5rem; }
+  /* ---- Masthead ---- */
+  .top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .name {
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  nav { display: flex; gap: 34px; }
+  nav a {
+    font-size: 21px;
+    color: var(--accent);
+  }
+  nav a:hover { color: var(--accent-hover); }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 2px; }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  /* ---- Body: two columns ---- */
+  .cols {
+    display: flex;
+    gap: 56px;
+    margin-top: 44px;
+    align-items: flex-start;
+  }
+  .left { flex: 0 0 340px; }
+  .right { flex: 1 1 auto; min-width: 0; }
 
-    /* ---- Top navigation --------------------------------------------------- */
-    nav {
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--line);
-    }
-    nav .wrap {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-top: 1.4rem;
-      padding-bottom: 1.4rem;
-      flex-wrap: wrap;
-    }
-    nav .home { font-weight: 500; color: var(--ink); letter-spacing: 0.01em; }
-    nav .links { display: flex; gap: 1.4rem; }
-    nav .links a { color: var(--muted); }
-    nav .links a:hover { color: var(--ink); text-decoration: none; }
+  .photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #eef0f3;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: #9aa0aa; font-size: 14px; letter-spacing: .05em; text-transform: uppercase;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ---- Hero / bio ------------------------------------------------------- */
-    header.hero { padding: 3.5rem 0 2.5rem; }
-    .hero-top {
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 2.55rem;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin: 0 0 0.4rem;
-    }
-    .role {
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin: 0 0 1.6rem;
-      line-height: 1.5;
-    }
-    .bio p { margin: 0 0 1rem; }
+  .contacts {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .contacts a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    color: var(--accent);
+  }
+  .contacts a:hover { color: var(--accent-hover); }
+  .contacts svg { flex: 0 0 auto; width: 20px; height: 20px; fill: var(--icon); }
 
-    /* Portrait. Replace the <svg> below with:  <img src="photo.jpg" alt="...">  */
-    .portrait {
-      flex: 0 0 auto;
-      width: 132px; height: 132px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-    .portrait img, .portrait svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bio p { margin: 0 0 20px; color: var(--muted); }
+  .bio p:first-child { margin-top: 0; }
 
-    /* ---- Contact row ------------------------------------------------------ */
-    .contact {
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      margin-top: 1.8rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid var(--line);
-      display: flex;
-      gap: 1.4rem;
-      flex-wrap: wrap;
-    }
-    .contact a { color: var(--muted); }
-    .contact a:hover { color: var(--accent); }
+  section { margin-top: 40px; }
+  section:first-of-type { margin-top: 8px; }
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .paper { margin-bottom: 20px; }
+  .paper .title { font-size: 21px; font-weight: 500; line-height: 1.35; margin: 0 0 4px; color: var(--ink); }
+  .paper .meta { font-size: 18px; color: var(--muted); margin: 0 0 6px; }
+  .paper .links { font-size: 19px; }
 
-    /* ---- Sections --------------------------------------------------------- */
-    section { padding: 2.5rem 0; border-top: 1px solid var(--line); }
-    h2 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 1.5rem;
-      margin: 0 0 1.4rem;
-    }
-    .work { margin-bottom: 1.6rem; }
-    .work:last-child { margin-bottom: 0; }
-    .work .title { font-style: italic; }
-    .work .status {
-      font-family: var(--sans);
-      font-size: 0.82rem;
-      color: var(--muted);
-      display: block;
-      margin-top: 0.15rem;
-    }
-    .work p { margin: 0.5rem 0 0; color: var(--ink); }
-
-    /* ---- Footer ----------------------------------------------------------- */
-    footer {
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      color: var(--muted);
-      padding: 2.5rem 0 3.5rem;
-      border-top: 1px solid var(--line);
-    }
-
-    /* ---- Motion & responsive --------------------------------------------- */
-    body { opacity: 0; animation: fade 0.6s ease forwards; }
-    @keyframes fade { to { opacity: 1; } }
-
-    @media (max-width: 560px) {
-      h1 { font-size: 2.1rem; }
-      .hero-top { flex-direction: column-reverse; align-items: flex-start; gap: 1.4rem; }
-      .portrait { width: 104px; height: 104px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      body { animation: none; opacity: 1; }
-      * { scroll-behavior: auto; }
-    }
-    html { scroll-behavior: smooth; }
-  </style>
+  @media (max-width: 760px) {
+    .wrap { padding: 32px 22px 64px; }
+    .cols { flex-direction: column; gap: 32px; }
+    .left { flex: 0 0 auto; width: 100%; max-width: 320px; }
+    .name { font-size: 28px; }
+    nav { gap: 22px; }
+    nav a, body { font-size: 19px; }
+  }
+</style>
 </head>
-
 <body>
+<div class="wrap">
 
-  <nav>
-    <div class="wrap">
-      <a class="home" href="#top">Carmen Arbaizar Mazás</a>
-      <div class="links">
-        <a href="#top">Home</a>
-        <a href="#research">Research</a>
-        <a href="cv.pdf">CV</a>
+  <div class="top">
+    <p class="name">Carmen Arbaizar Mazás</p>
+    <nav>
+      <a href="research.html">Research</a>
+      <a href="Academic_CV_summary.pdf">CV</a>
+    </nav>
+  </div>
+
+  <div class="cols">
+    <div class="left">
+      <div class="photo"><img src="Headshot.jpg" alt="Carmen Arbaizar Mazás"></div>
+      <div class="contacts">
+        <a href="mailto:c.arbaizar@lse.ac.uk">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.4l8 5 8-5V6H4zm16 2.9-8 5-8-5V18h16V8.9z"/></svg>
+          c.arbaizar@lse.ac.uk
+        </a>
+        <a href="mailto:cmazas@ucsd.edu">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.4l8 5 8-5V6H4zm16 2.9-8 5-8-5V18h16V8.9z"/></svg>
+          cmazas@ucsd.edu
+        </a>
+        <a href="https://x.com/carmenarbaizar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          @carmenarbaizar
+        </a>
       </div>
     </div>
-  </nav>
 
-  <div id="top"></div>
-
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-top">
-        <div>
-          <h1>Carmen Arbaizar&nbsp;Mazás</h1>
-          <p class="role">PhD Candidate in Economics · London School of Economics<br>
-             Visiting PhD Student · UC San Diego</p>
-        </div>
-
-        <!-- PORTRAIT: swap this SVG for  <img src="photo.jpg" alt="Carmen Arbaizar Mazás"> -->
-        <div class="portrait" aria-hidden="true">
-          <svg viewBox="0 0 132 132" xmlns="http://www.w3.org/2000/svg">
-            <rect width="132" height="132" fill="#efece4"/>
-            <text x="66" y="82" text-anchor="middle"
-                  font-family="Newsreader, Georgia, serif" font-size="46" fill="#8a857a">CA</text>
-          </svg>
-        </div>
-      </div>
-
+    <div class="right">
       <div class="bio">
-        <p>I am a PhD candidate in Economics at the
-           <a href="https://www.lse.ac.uk/economics">London School of Economics</a>,
-           currently a visiting PhD student at UC San Diego. My research is in labor and
-           health economics, with interests in development and macroeconomics.</p>
-        <p>Before the LSE, I was a predoctoral fellow at Yale University, where I worked with
-           Michael Peters and Fabrizio Zilibotti. I hold an MSc in Economics from University
-           College London and a double degree in Economics and International Studies from
-           Carlos III University of Madrid.</p>
-      </div>
-
-      <div class="contact">
-        <a href="mailto:c.arbaizar@lse.ac.uk">Email</a>
-        <a href="https://carmenarbaizar.substack.com">Substack</a>
-        <!-- Add or remove links as you like:
-        <a href="https://scholar.google.com/">Google Scholar</a>
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-        -->
+        <p>
+          I am a PhD Student in Economics at the London School of Economics and
+          Political Science. I am currently also visiting the University of
+          California, San Diego.
+        </p>
       </div>
     </div>
-  </header>
+  </div>
 
-  <section id="research">
-    <div class="wrap">
-      <h2>Research</h2>
-
-      <div class="work">
-        <a class="title" href="https://ssrn.com/abstract=7475158">Can Labor Market Opportunities
-          Explain the Rising Levels of Morbidity and Mortality in the U.S.?</a>
-        <span class="status">Working paper, 2025 ·
-          <a href="https://ssrn.com/abstract=7475158">SSRN</a></span>
-        <!-- Short summary in plain terms. Replace with your official abstract if you prefer. -->
-        <p>Using the opening of large plants across U.S. counties (1982–1993) as a natural
-           experiment, I estimate the causal effect of improved local labor-market conditions
-           on “deaths of despair,” finding sizeable and persistent reductions in overdose
-           mortality, concentrated among men and midlife adults.</p>
-      </div>
-
-      <!-- Duplicate this block for each additional paper:
-      <div class="work">
-        <span class="title">Paper title</span>
-        <span class="status">Working paper, 2026 · with Coauthor · [<a href="paper.pdf">PDF</a>]</span>
-        <p>Short abstract…</p>
-      </div>
-      -->
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      © 2026 Carmen Arbaizar Mazás · <a href="mailto:c.arbaizar@lse.ac.uk">c.arbaizar@lse.ac.uk</a>
-    </div>
-  </footer>
-
+</div>
 </body>
 </html>
